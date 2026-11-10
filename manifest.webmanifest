@@ -1,0 +1,18 @@
+{
+  "name": "FitVision — Meus Treinos",
+  "short_name": "FitVision",
+  "description": "Treinos A B C e histórico, sem API",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080d16",
+  "theme_color": "#080d16",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
