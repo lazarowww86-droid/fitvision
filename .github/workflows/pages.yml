@@ -1,32 +1,12 @@
-name: Publicar FitVision
+# FitVision é um site estático publicado diretamente da branch main.
+# Configure Settings > Pages > Build and deployment > Source:
+# Deploy from a branch; Branch: main; Folder: /(root).
+# O fluxo anterior falhava por falta de permissão da integração.
+name: FitVision (publicação via branch)
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  info:
     runs-on: ubuntu-latest
     steps:
-      - name: Obter arquivos
-        uses: actions/checkout@v4
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Empacotar site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Publicar site
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - run: echo "A publicação do FitVision é feita pelo GitHub Pages diretamente da branch main."
